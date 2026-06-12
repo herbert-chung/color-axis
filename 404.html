@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        // 獲取當前完整的 URL 資訊
+        var l = window.location;
+        const repoName = 'color-axis'; // 替換為你的實際 repo 名稱
+        // 將當前的路徑與參數加密，改以 query string 的形式重導向回首頁 index.html
+        l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + l.pathname.split('/').slice(0, 1 + (l.pathname.split('/')[1] === repoName ? 1 : 0)).join('/') + '/?/' + l.pathname.slice(1).split('/').join('~and~') + (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') + l.hash);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

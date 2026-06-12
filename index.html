@@ -1,14 +1,32 @@
 <!doctype html>
 <html lang="zh-TW">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/color-axis/imgs/favicon-BXdOcOWT..svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Color Axis</title>
-    <script type="module" crossorigin src="/color-axis/js/index-BlykIVzm.js"></script>
-    <link rel="stylesheet" crossorigin href="/color-axis/css/index-Buug-6Q2.css">
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="/color-axis/imgs/favicon-BXdOcOWT..svg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Color Axis</title>
+	<script type="text/javascript">
+		// 檢查網址列是否有被 404.html 轉化過的 query 參數
+		(function (l) {
+			if (l.search[1] === '/') {
+				var decoded = l.search.slice(1).split('&').map(function (s) {
+					return s.replace(/~and~/g, '&')
+				}).join('?');
+				// 還原正確的 History 路由狀態
+				window.history.replaceState(null, null,
+					l.pathname.slice(0, -1) + decoded + l.hash
+				);
+			}
+		}(window.location))
+	</script>
+  <script type="module" crossorigin src="/color-axis/js/index-CSITOLRe.js"></script>
+  <link rel="stylesheet" crossorigin href="/color-axis/css/index-Buug-6Q2.css">
+</head>
+
+<body>
+	<div id="app"></div>
+
+</body>
+
 </html>
