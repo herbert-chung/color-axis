@@ -5,11 +5,18 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
-        // 獲取當前完整的 URL 資訊
-        var l = window.location;
-        const repoName = 'color-axis'; // 替換為你的實際 repo 名稱
-        // 將當前的路徑與參數加密，改以 query string 的形式重導向回首頁 index.html
-        l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + l.pathname.split('/').slice(0, 1 + (l.pathname.split('/')[1] === repoName ? 1 : 0)).join('/') + '/?/' + l.pathname.slice(1).split('/').join('~and~') + (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') + l.hash);
+        (function () {
+            var l = window.location;
+            var repoName = 'color-axis'; // 你的 GitHub 儲存庫名稱
+            // 1. 計算出正確的首頁根路徑（確保格式永遠是 /repoName/）
+            var baseRoute = '/' + repoName + '/';
+            // 2. 擷取首頁之後的所有子路由、參數與 Hash (例如: about?id=1#top)
+            var subRoute = l.pathname.slice(baseRoute.length - 1) + l.search + l.hash;
+            // 3. 使用瀏覽器內建編碼，將子路由整包封裝進 'p' 參數中
+            var query = '?p=' + encodeURIComponent(subRoute);
+            // 4. 安全跳轉回首頁
+            l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + baseRoute + query);
+        }());
     </script>
 </head>
 

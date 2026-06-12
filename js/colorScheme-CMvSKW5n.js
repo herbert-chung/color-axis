@@ -1,1 +1,0 @@
-import{_ as o,c,a as s,o as r}from"./index-CSITOLRe.js";const t={},n={class:"color-scheme"};function a(l,e){return r(),c("div",n,[...e[0]||(e[0]=[s("h2",null,"ColorScheme",-1)])])}const m=o(t,[["render",a]]);export{m as default};
